@@ -19,32 +19,22 @@ class ChatsController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show chats
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         return view('chat');
     }
 
-    /**
-     * Fetch all messages
-     *
-     * @return Message
-     */
+    
     public function fetchMessages()
     {
         return Message::with('user')->get();
     }
 
-    /**
-     * Persist message to database
-     *
-     * @param  Request $request
-     * @return Response
-     */
+  
+     // message to database
+     
+     
     public function sendMessage(Request $request)
     {
         $user = Auth::user();
